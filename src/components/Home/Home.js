@@ -14,7 +14,10 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+
             <Services></Services>
+
+
             <Footer></Footer>
         </div>
 

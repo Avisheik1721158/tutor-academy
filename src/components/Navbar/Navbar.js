@@ -8,7 +8,7 @@ const Navbar = () => {
             id: 1, name: 'Home', link: '/home'
         },
         {
-            id: 2, name: 'Services', link: '/services'
+            id: 2, name: 'Services', link: '/#services'
         },
 
         {

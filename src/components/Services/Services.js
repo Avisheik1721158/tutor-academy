@@ -62,7 +62,8 @@ const Services = () => {
 
     ]
     return (
-        <div>
+        <div id="services" className='container'>
+            <h1 className='text-success text-center mt-5'> My Services</h1>
             {
                 items.map(item => <Service key={item.id} item={item} ></Service>)
             }
