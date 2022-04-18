@@ -54,6 +54,7 @@ import About from './components/About/About';
 import Services from './components/Services/Services';
 import Login from './components/Login/Login';
 import Checkout from './components/Checkout/Checkout';
+import Others from './components/Others/Others';
 
 
 
@@ -74,6 +75,7 @@ function App() {
 
         <Route path='/about' element={<About></About>} ></Route>
         <Route path='/services/' element={<Services></Services>} ></Route>
+        <Route path='/others/' element={<Others></Others>} ></Route>
         <Route path='/proceed/:proceedId' element={<Checkout></Checkout>} ></Route>
 
         <Route path='/login' element={<Login></Login>} ></Route>

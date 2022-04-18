@@ -14,10 +14,13 @@ const Navbar = () => {
         {
             id: 3, name: 'About', link: '/about'
         },
+        {
+            id: 4, name: 'Others', link: '/others'
+        },
 
         {
 
-            id: 4, name: 'Login', link: '/login'
+            id: 5, name: 'Login', link: '/login'
 
 
 
