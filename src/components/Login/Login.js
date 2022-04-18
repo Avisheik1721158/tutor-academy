@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -31,7 +32,7 @@ const Login = () => {
                     <form onSubmit={handleSubmit} className="mt-10" method="POST">
 
                         <label for="email" className="block text-xs font-semibold text-gray-600 uppercase">E-mail</label>
-                        <input id="email" ref={emailRef} type="email" name="email" placeholder="e-mail address" autoComplete="email"
+                        <input id="email" ref={emailRef} type="email" name="email" placeholder="e-mail address" required autoComplete="email"
                             className="block w-full py-3 px-1 mt-2 
                     text-gray-800 appearance-none 
                     border-b-2 border-gray-100
@@ -40,7 +41,7 @@ const Login = () => {
 
 
                         <label for="password" className="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
-                        <input id="password" ref={passwordRef} type="password" name="password" placeholder="password" autoComplete="current-password"
+                        <input id="password" ref={passwordRef} type="password" name="password" placeholder="password" required autoComplete="current-password"
                             className="block w-full py-3 px-1 mt-2 mb-4
                     text-gray-800 appearance-none 
                     border-b-2 border-gray-100
@@ -65,9 +66,9 @@ const Login = () => {
                                 or
                             </p>
 
-                            <a href="register" className="flex-2 underline">
+                            <Link to='/register' className="flex-2 underline">
                                 Create an Account
-                            </a>
+                            </Link>
                         </div>
                     </form>
                 </div>

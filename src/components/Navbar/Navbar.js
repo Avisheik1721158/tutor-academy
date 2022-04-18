@@ -25,6 +25,13 @@ const Navbar = () => {
 
 
         },
+        {
+
+            id: 6, name: 'Sign Up', link: '/register'
+
+
+
+        },
 
     ]
     return (

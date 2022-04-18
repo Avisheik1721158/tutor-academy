@@ -55,6 +55,7 @@ import Services from './components/Services/Services';
 import Login from './components/Login/Login';
 import Checkout from './components/Checkout/Checkout';
 import Others from './components/Others/Others';
+import Register from './components/Register/Register';
 
 
 
@@ -79,6 +80,7 @@ function App() {
         <Route path='/proceed/:proceedId' element={<Checkout></Checkout>} ></Route>
 
         <Route path='/login' element={<Login></Login>} ></Route>
+        <Route path='/register' element={<Register></Register>} ></Route>
         <Route path='*' element={<NotFound></NotFound>} ></Route>
       </Routes>
 
