@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # Furniture-Bazar
 It is bascially a furniture based website where user can buy different type of furniture. The company will sent products a certain amount of time after the completing the order.
@@ -18,7 +17,7 @@ Github link:
 - This project is responsive. That means this project clearly adjust every type of device.
 - If user goes wrongly in any route its return error page and request to go home page.
 
-=======
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -89,4 +88,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> a8d3664 (Initialize project using Create React App)
+
