@@ -1,0 +1,44 @@
+[
+    {
+        "id": 0,
+        "img": "https://d1scby4y7n7eqn.cloudfront.net/durian/durian.in/defaultskins/boost79/images/customer-images/Hiral-Valia.jpg",
+        "name": "Hiral Valia",
+        "review": "The office furniture is ergonomic in design, it is very comfortable to use for long hours in office. Be it design, comfort or the shopping experience, it ticks all the boxes for us.",
+        "star": "5"
+    },
+    {
+        "id": 1,
+        "name": "Saima Rahman",
+        "review": "FRIENDLY STAFF & LOVABLE ENVIRONMENT. DELIVERY ON TIME. VERY PROFESSIONAL SERVICE, ALL THE BEST FURNITURE BAZAR",
+        "img": "https://d1scby4y7n7eqn.cloudfront.net/durian/durian.in/defaultskins/boost79/images/customer-images/Ibrahim.jpg",
+        "star": "4"
+    },
+    {
+        "id": 2,
+        "name": "Clementine Bauch",
+        "review": "We purchased a leather sofa and it is our favorite piece of furniture. From the shopping experience to the product selection and delivery it is a complete amazing experience from Furniture Bazar.",
+        "img": "https://d1scby4y7n7eqn.cloudfront.net/durian/durian.in/defaultskins/boost79/images/customer-images/Parikshit-Pawar.jpg",
+        "star": "3"
+    },
+    {
+        "id": 3,
+        "name": "Lionel Messi",
+        "review": "Purchased from goregaon store. Happy with quality and professionalism and range of products.",
+        "img": "https://render.fineartamerica.com/images/rendered/default/flat/round-beach-towel/images-medium-5/2-lionel-messi-paul-meijering.jpg?&targetx=0&targety=-140&imagewidth=788&imageheight=1068&modelwidth=788&modelheight=788&backgroundcolor=2D1820&orientation=0",
+        "star": "3"
+    },
+    {
+        "id": 4,
+        "name": "Cristiano Ronaldo",
+        "review": "We purchased our entire home furniture from furniture bazar. We have referred all our friends and family to purchase furniture here.",
+        "img": "https://render.fineartamerica.com/images/rendered/default/flat/round-beach-towel/images/artworkimages/medium/1/cristiano-ronaldo-gull-g.jpg?&targetx=0&targety=0&imagewidth=788&imageheight=788&modelwidth=788&modelheight=788&backgroundcolor=A69A9A&orientation=0",
+        "star": "3"
+    },
+    {
+        "id": 5,
+        "name": "Neymar",
+        "review": "Have become a regular customer in a very short span of time. Very approachable staff, service and delivery on time.",
+        "img": "https://render.fineartamerica.com/images/rendered/default/flat/round-beach-towel/images/artworkimages/medium/3/1-neymar-jr-yopi-coles.jpg?&targetx=-2&targety=-31&imagewidth=788&imageheight=1102&modelwidth=788&modelheight=788&backgroundcolor=454854&orientation=0",
+        "star": "2"
+    }
+]
