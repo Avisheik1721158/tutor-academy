@@ -1,24 +1,54 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+
 
 const Register = () => {
+
+    // Create User With Email and Password
+    const navigate = useNavigate();
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    //  Email, Pass Ref
+
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const nameRef = useRef('');
     const confirmRef = useRef('');
-    const [error, setError] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+
+    // handle Register
     const handleRegister = event => {
         event.preventDefault();
+        // input field Value
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const name = nameRef.current.value;
         const confirm = confirmRef.current.value;
 
+        createUserWithEmailAndPassword(email, password)
+
         console.log(email, password, name, confirm)
+
+        // confirm pass validation
+
         if (passwordRef.current.value !== confirmRef.current.value) {
             console.log('password did not match')
-            setError('password did not match');
+            setErrorMessage('password did not match');
         }
+        else {
+            setErrorMessage('Sign Up successfully');
+        }
+    }
+    if (user) {
+        navigate('/home');
     }
 
     return (
@@ -80,7 +110,7 @@ const Register = () => {
                 focus:outline-none hover:bg-gray-700 hover:shadow-none">
                             SIGN UP
                         </button>
-                        <p className='text-red-500'> {error}</p>
+                        <p className='text-red-500'> {errorMessage}</p>
 
                         <div className="sm:flex sm:flex-wrap mt-8 sm:mb-4 text-sm text-center">
                             <Link to='/login' className="flex-2 underline">
