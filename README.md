@@ -6,8 +6,8 @@ Open http://localhost:3000 to view it in your browser.
 Github link:
 (https://github.com/programming-hero-web-course-4/independent-service-provider-Avisheik1721158)
 
-## 🔗 Netlify Links
-( )
+## 🔗 Live Links
+(https://tutor-academy-1b167.web.app/ )
 
 ## Project Description
 
