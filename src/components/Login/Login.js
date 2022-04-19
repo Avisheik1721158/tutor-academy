@@ -37,7 +37,7 @@ const Login = () => {
                     text-gray-800 appearance-none 
                     border-b-2 border-gray-100
                     focus:text-gray-500 focus:outline-none focus:border-gray-200"
-                            required />
+                        />
 
 
                         <label for="password" className="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
@@ -46,7 +46,7 @@ const Login = () => {
                     text-gray-800 appearance-none 
                     border-b-2 border-gray-100
                     focus:text-gray-500 focus:outline-none focus:border-gray-200"
-                            required />
+                        />
 
 
                         <button type="submit"
@@ -55,20 +55,16 @@ const Login = () => {
                     focus:outline-none hover:bg-gray-700 hover:shadow-none">
                             Login
                         </button>
-
-
                         <div className="sm:flex sm:flex-wrap mt-8 sm:mb-4 text-sm text-center">
-                            <a href="forgot-password" className="flex-2 underline">
-                                Forgot password?
-                            </a>
-
-                            <p className="flex-1 text-gray-500 text-md mx-4 my-1 sm:my-auto">
-                                or
-                            </p>
-
                             <Link to='/register' className="flex-2 underline">
                                 Create an Account
                             </Link>
+                            <p className="flex-1 text-gray-500 text-md mx-4 my-1 sm:my-auto">
+                                or
+                            </p>
+                            <a href="forgot-password" className="flex-2 underline">
+                                Forgot password?
+                            </a>
                         </div>
                     </form>
                 </div>

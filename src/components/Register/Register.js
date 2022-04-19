@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
@@ -6,18 +6,21 @@ const Register = () => {
     const passwordRef = useRef('');
     const nameRef = useRef('');
     const confirmRef = useRef('');
-    const handleSubmit = event => {
+    const [error, setError] = useState('');
+    const handleRegister = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         const name = nameRef.current.value;
         const confirm = confirmRef.current.value;
 
-        // console.log(email, password, name, confirm)
+        console.log(email, password, name, confirm)
+        if (passwordRef.current.value !== confirmRef.current.value) {
+            console.log('password did not match')
+            setError('password did not match');
+        }
     }
-    if (passwordRef.current.value !== confirmRef.current.value) {
-        console.log("Password did not match")
-    }
+
     return (
         <div className="flex flex-col h-screen bg-gray-100">
 
@@ -35,7 +38,7 @@ const Register = () => {
                         Please Register!!!
                     </h2>
 
-                    <form onSubmit={handleSubmit} className="mt-10" method="POST">
+                    <form onSubmit={handleRegister} className="mt-10" method="POST">
 
                         <label for="name" className="block mt-2 text-xs font-semibold text-gray-600 uppercase">Your name</label>
                         <input id="name" ref={nameRef} type="text" name="name" placeholder="name" required autoComplete="current-password"
@@ -43,7 +46,7 @@ const Register = () => {
                 text-gray-800 appearance-none 
                 border-b-2 border-gray-100
                 focus:text-gray-500 focus:outline-none focus:border-gray-200"
-                            required />
+                        />
 
                         <label for="email" className="block text-xs font-semibold text-gray-600 uppercase">E-mail</label>
                         <input id="email" ref={emailRef} type="email" name="email" placeholder="e-mail address" required autoComplete="email"
@@ -51,7 +54,7 @@ const Register = () => {
                 text-gray-800 appearance-none 
                 border-b-2 border-gray-100
                 focus:text-gray-500 focus:outline-none focus:border-gray-200"
-                            required />
+                        ></input>
 
 
                         <label for="password" className="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
@@ -60,7 +63,7 @@ const Register = () => {
                 text-gray-800 appearance-none 
                 border-b-2 border-gray-100
                 focus:text-gray-500 focus:outline-none focus:border-gray-200"
-                            required />
+                        />
 
                         <label for="confirm-password" className="block mt-2 text-xs font-semibold text-gray-600 uppercase">confirm-password</label>
                         <input id="confirm-password" ref={confirmRef} type="password" name="confirm-password" placeholder="Confirm your password" required autoComplete="current-password"
@@ -68,7 +71,7 @@ const Register = () => {
                 text-gray-800 appearance-none 
                 border-b-2 border-gray-100
                 focus:text-gray-500 focus:outline-none focus:border-gray-200"
-                            required />
+                        />
 
 
                         <button type="submit"
@@ -77,20 +80,14 @@ const Register = () => {
                 focus:outline-none hover:bg-gray-700 hover:shadow-none">
                             SIGN UP
                         </button>
-
+                        <p className='text-red-500'> {error}</p>
 
                         <div className="sm:flex sm:flex-wrap mt-8 sm:mb-4 text-sm text-center">
-                            <a href="forgot-password" className="flex-2 underline">
-                                Forgot password?
-                            </a>
-
-                            <p className="flex-1 text-gray-500 text-md mx-4 my-1 sm:my-auto">
-                                or
-                            </p>
-
-                            <Link to='/register' className="flex-2 underline">
-                                Create an Account
+                            <Link to='/login' className="flex-2 underline">
+                                Already have an account?
                             </Link>
+
+
                         </div>
                     </form>
                 </div>
