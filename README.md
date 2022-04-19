@@ -17,4 +17,5 @@ Github link:
 - If user goes wrongly in any route its return error page and request to go home page.
 - There has 3 service which i want to teach.
 - Sign in, Email verification are used in this project.
+- I used react tailwind, react toaster, react router and so on in this project.
 
