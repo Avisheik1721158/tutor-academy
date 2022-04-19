@@ -81,8 +81,11 @@ const Navbar = () => {
                 <ul className='md:flex justify-center text-rose-50 gap-5'>
                     <Link to="/home">Home</Link>
                     <Link to="/services">Services</Link>
+                    <Link to="/blogs">Blogs</Link>
+
                     <Link to="/About">About</Link>
                     <Link to="/others">Others</Link>
+
                     {
                         user ?
                             <button onClick={handleSignOut}>Sign out</button> :

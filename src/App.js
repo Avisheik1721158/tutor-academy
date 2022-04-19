@@ -57,6 +57,7 @@ import Checkout from './components/Checkout/Checkout';
 import Others from './components/Others/Others';
 import Register from './components/Register/Register';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
+import Blogs from './components/Blogs/Blogs';
 
 
 
@@ -83,6 +84,7 @@ function App() {
         <Route path='/home' element={<Home />} ></Route>
 
         <Route path='/about' element={<About></About>} ></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
         <Route path='/services/' element={<Services></Services>} ></Route>
         <Route path='/others/' element={<Others></Others>} ></Route>
         <Route path='/proceed/:proceedId' element={<RequireAuth><Checkout></Checkout></RequireAuth>} ></Route>

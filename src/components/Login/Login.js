@@ -1,7 +1,15 @@
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
+import Social from '../Social/Social';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
+import { ButtonGroup } from 'react-bootstrap';
+
 
 const Login = () => {
     const emailRef = useRef('');
@@ -10,6 +18,20 @@ const Login = () => {
 
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
+    let errorSignal;
+    // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+    // if (error1) {
+    //     return (
+    //         <div>
+    //             <p className='text-danger'>Error: {error1.message}</p>
+    //         </div>
+    //     );
+    // }
+
+    // if (user1) {
+    //     navigate('/home')
+    // }
 
 
     // useauthstate
@@ -23,8 +45,20 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth)
 
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
+
     if (user) {
         navigate(from, { replace: true });
+    }
+    if (error) {
+        errorSignal = <div>
+            <p className='text-danger'>Email or password did not match</p>
+        </div>
+
     }
 
     // handle Submit
@@ -37,6 +71,13 @@ const Login = () => {
         console.log(email, password)
 
         signInWithEmailAndPassword(email, password)
+    }
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        toast('Sent email');
+
     }
     return (
 
@@ -55,6 +96,7 @@ const Login = () => {
                     <h2 className="text-center font-semibold text-3xl lg:text-4xl text-gray-800">
                         Please Login!!!
                     </h2>
+                    <p>{errorSignal}</p>
 
                     <form onSubmit={handleSubmit} className="mt-10" method="POST">
 
@@ -82,6 +124,10 @@ const Login = () => {
                     focus:outline-none hover:bg-gray-700 hover:shadow-none">
                             Login
                         </button>
+
+                        <Social></Social>
+                        <ToastContainer />
+
                         <div className="sm:flex sm:flex-wrap mt-8 sm:mb-4 text-sm text-center">
                             <Link to='/register' className="flex-2 underline">
                                 Create an Account
@@ -89,9 +135,12 @@ const Login = () => {
                             <p className="flex-1 text-gray-500 text-md mx-4 my-1 sm:my-auto">
                                 or
                             </p>
-                            <a href="forgot-password" className="flex-2 underline">
+                            {/* <Link to="login" className="flex-2 underline" onClick={resetPassword} >
                                 Forgot password?
-                            </a>
+                            </Link> */}
+                            <ButtonGroup className="flex-2 underline cursor-pointer " onClick={resetPassword} >
+                                Forgot password?
+                            </ButtonGroup>
                         </div>
                     </form>
                 </div>

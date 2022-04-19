@@ -2,6 +2,9 @@ import React, { useRef, useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
+import Social from '../Social/Social';
+
 
 
 const Register = () => {
@@ -12,8 +15,8 @@ const Register = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+        // error,
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     //  Email, Pass Ref
 
@@ -46,6 +49,9 @@ const Register = () => {
         else {
             setErrorMessage('Sign Up successfully');
         }
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
     if (user) {
         navigate('/home');
@@ -111,6 +117,8 @@ const Register = () => {
                             SIGN UP
                         </button>
                         <p className='text-red-500'> {errorMessage}</p>
+                        <Social></Social>
+
 
                         <div className="sm:flex sm:flex-wrap mt-8 sm:mb-4 text-sm text-center">
                             <Link to='/login' className="flex-2 underline">
